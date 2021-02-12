@@ -1,0 +1,124 @@
+#contenido{
+  
+    height: 250vh;
+    
+}
+#logo{
+
+    padding: 20px;
+    width:160px;
+   
+}
+
+#formulario{
+    background-color: rgba(0, 0, 0, 0.7);
+    color:#ffffff;
+    width: 300px;
+    height: 450px;
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.control{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-width: 0ch;
+    
+}
+
+.caja-texto{
+    background-color:#333333;
+    
+}
+
+.boton {
+    background-color:grey;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;     
+
+}
+
+.boton:hover {
+  background-color: rgba(17, 99, 105, 0.295);
+   text-decoration: underline;
+
+}
+
+#help-link{
+    float: right;
+    color: rgba(255, 255, 255, 0.493);
+    text-decoration: none;
+
+
+}
+
+#help-link:hover{
+    text-decoration: underline;
+}
+
+#facebook{
+    float:left;
+    color: rgba(255, 255, 255, 0.384);
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px;
+    width: 160px;
+    font-size: 15px;
+}
+
+#primera-vez{
+    float: left;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.384);
+    text-decoration: none;
+
+}
+
+#robot{
+    float: left;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.384);
+    text-decoration: none;
+    font-size: small;
+
+}
+
+#info{
+    margin-top: 20px;
+    color: rgb(21, 77, 230);
+    text-decoration: none;
+    font-size: medium;
+    float: left;
+}
+
+#suscribete
+{
+    margin-top: 20px;
+    color:white;
+    text-decoration: none;
+    font-size:medium;
+    float:left;
+}
+
+  
+#info:hover{
+ 
+    text-decoration: underline;
+}
