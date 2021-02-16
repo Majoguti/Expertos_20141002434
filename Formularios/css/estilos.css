@@ -18,6 +18,7 @@ body{
     overflow: hidden;
     margin: auto;
     text-align: center;
+    color: white;
 }
 
 header{
@@ -123,6 +124,7 @@ main .contenido-cajas{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    color: white;
 }
 
 main .quehacemos .contenido-cajas .tarjeta{
@@ -197,6 +199,7 @@ footer .contacto   textarea{
    display: flex;
    justify-content: flex-end;
    margin: center;
+   
   
 
 
@@ -214,6 +217,7 @@ footer .contacto  input[type="submit"]{
     color:#fff;
     cursor: pointer;
     float:right;
+    background-color: rgba(0, 128, 0, 0.63);
    
    
 
@@ -230,3 +234,13 @@ footer .contacto  input[type="submit"]:hover{
     
 }
 
+#letra{
+  color: white;
+}
+
+#logo_1{
+   
+    margin:10px 0;
+    float: center;
+    display:unset;
+}
