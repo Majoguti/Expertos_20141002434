@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="../Administrador/estilos/styles.css""/>
     <link rel="shortcut icon" href="IMG/logoo.png" type="image/x-icon">
 
-    <title>Perfil de Usuario</title>
+    <title>Panel del Usuario</title>
   </head>
   <body id="body">
     <div class="container">
@@ -22,7 +21,7 @@
         </div>
         <div class="navbar__right">
           <a href="#">
-            <img width="30" src="IMG/usuario.png" alt="" />
+            <img width="30" src="./IMG/sin_fondo.png" alt="" />
           </a>
         </div>
       </nav>
@@ -61,7 +60,7 @@
       <div id="sidebar">
         <div class="sidebar__title">
           <div class="sidebar__img">
-            <img src="IMG/logoo.png" alt="" />
+            <img src="./IMG/sin_fondo.png" alt="" />
             <h1>CODENOW BE</h1>
           </div>
           <i
@@ -73,22 +72,16 @@
         </div>
 
         <div class="sidebar__menu">
-            <div class="sidebar__link">
-                <i class="fa fa-building-o"></i>
+          <div class="sidebar__link active_menu_link">
+            <i class="fa fa-home"></i>
             <a href="#">Panel Administrativo</a>
           </div>
           <h2>MENU</h2>
 
-          <ul class="nav flex-column m-0" >
-            <li class="sidebar__link">
-                <a class="sidebar__link active_menu_link nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="true" aria-expanded="false">Mi Perfil</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Editar mi perfil</a>
-                
-                </div>
-            </li>
-        </ul>
+          <div class="sidebar__link">
+            <i class="fa fa-user"></i>
+            <a href="#">Mis Perfil</a>
+          </div>
             <div class="sidebar__link">
             <i class="fa fa-wrench"></i>
             <a href="#">Mis Proyectos</a>
