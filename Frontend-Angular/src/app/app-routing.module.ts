@@ -8,13 +8,28 @@ import { PagosComponent } from './Pages/pagos/pagos.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 import { PAdminComponent } from './Pages/p-admin/p-admin.component';
 import { RegistroComponent } from './Pages/registro/registro.component';
+import { AcercaComponent } from './Pages/acerca/acerca.component';
+import { PanelUComponent } from './Pages/panel-u/panel-u.component';
+import { PUserComponent } from './Pages/p-user/p-user.component';
+import { PerfilUComponent } from './Pages/perfil-u/perfil-u.component';
+import { ProyectosComponent } from './Pages/proyectos/proyectos.component';
+import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
 
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
-
+   
   { path: 'inicio', component: InicioComponent},
   { path: 'registro', component:  RegistroComponent},
+  { path: 'acerca', component:  AcercaComponent},
+  { path: 'menu_2', component:  PanelUComponent ,children: [{
+    path: 'p-user', component: PUserComponent },
+    {path:'perfil-user', component:  PerfilUComponent },
+    {path:'proyectos', component:  ProyectosComponent },
+    {path:'pagos_user', component: PagosUserComponent },
+
+
+  ]},
   { path: 'menu', component: PanelComponent , children: [{
     path: 'p-admin', component: PAdminComponent},
     {path: 'clientes', component: ClientesComponent},

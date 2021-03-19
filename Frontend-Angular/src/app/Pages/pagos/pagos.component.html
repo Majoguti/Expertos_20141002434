@@ -6,32 +6,35 @@
             <h1>Pagos de Clientes</h1>      
           </div>
         </div>
-
-     
     </div>
 </div>
 
-<div class="m-3 container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Plan</th>
-                <th scope="col">Pago</th>
-                <th scope="col">Fecha de Vencimiento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of usuarios" >
-                
-                <td>{{ item.nombre }}</td>
-                <td>{{ item.apellido }}</td>
-                <td>{{ item.plan }}</td>    
-                <td>{{ item.Pago}}</td>  
-                <td>{{ item.fecha }}</td>             
-            </tr>
-
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-12">
+        <div class="m-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Plan</th>
+                        <th scope="col">Pago</th>
+                        <th scope="col">Fecha de Vencimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of usuarios" >
+                        
+                        <td>{{ item.nombre }}</td>
+                        <td>{{ item.apellido }}</td>
+                        <td>{{ item.plan }}</td>    
+                        <td>{{ item.Pago}}</td>  
+                        <td>{{ item.fecha }}</td>             
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+

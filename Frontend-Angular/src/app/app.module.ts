@@ -13,6 +13,14 @@ import { PagosComponent } from './Pages/pagos/pagos.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 import { PAdminComponent } from './Pages/p-admin/p-admin.component';
 import { RegistroComponent } from './Pages/registro/registro.component';
+import { AcercaComponent } from './Pages/acerca/acerca.component';
+import { PanelUComponent } from './Pages/panel-u/panel-u.component';
+import { NavbarUComponent } from './components/navbar-u/navbar-u.component';
+import { SidebarUComponent } from './components/sidebar-u/sidebar-u.component';
+import { PUserComponent } from './Pages/p-user/p-user.component';
+import { PerfilUComponent } from './Pages/perfil-u/perfil-u.component';
+import { ProyectosComponent } from './Pages/proyectos/proyectos.component';
+import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +34,15 @@ import { RegistroComponent } from './Pages/registro/registro.component';
     PagosComponent,
     PerfilComponent,
     PAdminComponent,
-    RegistroComponent
+    RegistroComponent,
+    AcercaComponent,
+    PanelUComponent,
+    NavbarUComponent,
+    SidebarUComponent,
+    PUserComponent,
+    PerfilUComponent,
+    ProyectosComponent,
+    PagosUserComponent
   ],
   imports: [
     BrowserModule,

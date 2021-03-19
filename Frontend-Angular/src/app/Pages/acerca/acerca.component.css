@@ -2,23 +2,21 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    
 }
 
 body{
-    background:rgba(201, 193, 193, 0.185);
+   
     font-family:'lato';
     font-size: 16px;
+    background-color: grey;
     
 }
 
-.bg-img{
-    background-image: url('../../../assets/img/footer.png');
-
-}
 
 .contenedor{
     
-    width: 90%;
+    width: 190%;
     max-width: 1000px;
     overflow: hidden;
     margin: auto;
@@ -27,9 +25,26 @@ body{
     
 }
 
+#logo{
+
+    padding: 20px;
+    width:160px;
+    float: center  center;
+     
+}
+
+.contenedor_1{
+    background-color: rgba(0, 128, 0, 0.664);
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
+
+}
+
+
 header{
     background-image: url('../../../assets/img/portada.png');
-    height:400px;
+    height:700px;
     background-repeat: no-repeat;
     background-position:center;
     background-attachment: cover;
@@ -43,7 +58,9 @@ header .menu{
     background-color: transparent;
 }
 
-
+.bg-img{
+    background-color: rgba(128, 128, 128, 0.863);
+}
 
 header .menu a{
     font-size:18px;
@@ -158,100 +175,11 @@ main .portafolio .portafolio-textos{
     margin-bottom: 60px;
     font-size: 20px;
     color:grey;
-    
-    
-}
-
-
-
-footer .contacto{
-    height:600px;
-    background-position:center;
-    padding:60px 0;
- 
-}
-
-footer .footer-textos{
-    text-align: center;
-    color:white;
-    font-size:25px;
-    background-color:rgba(0, 0, 0, 0.404);
-   
-   
-}
-
-footer .footer-textos p{
-    font-size: 14px;
-    margin:10px 0 20px 0;
-    color: grey;
-    display: flex;
-    margin: right;
-    
-
-}
-form{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    display: flex;
-    
-}
-footer .contacto  input[type="text"], footer .contacto  input[type="password"], footer .contacto  input[type="email"],
-footer .contacto   textarea{
-    width: 100%;
-    margin: 6px 225px;
-    padding: 10px 50px;
-    background: black;
-    border-radius: 5px;
-    color:black;
-    border: 3px solid rgb(55, 134, 180);
-    font-family: 'lato';
-    font-weight: 300;
-    text-decoration-style: none;
-  
-
-   
-}
-
-
-.derecha{
-    margin-left: auto;
-    margin-right: auto;
-    float: center;
-    
-
-}
-
-
-footer .contacto  input[type="submit"]{
-    display:block;
-    width: 100px;
-    margin:10px 0;
-    padding: 10px 15px;
-    background: none;
-    border:1px solid #15a4fa;
-    border-radius: 5px;
-    color:#fff;
-    cursor: pointer;
-    float:right;
-    background-color: rgba(0, 128, 0, 0.883);
-    
-   
-
-}
-footer .contacto  input[type="submit"]:hover{
-    background: #15a4fa;
-    color: #fff;
    
     
-}
-
-.footer{
-    height:200px;
-    background: #000;
-
     
 }
+
 
 #letra{
   color: white;
@@ -267,10 +195,3 @@ footer .contacto  input[type="submit"]:hover{
  
 }
 
-.btn-success{
-    background-color: white;
-    color: white;
-    background: green;
-    cursor: pointer;
-    font-weight: bold;
-}
