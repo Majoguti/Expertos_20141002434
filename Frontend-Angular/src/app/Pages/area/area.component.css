@@ -1,0 +1,17 @@
+.container-fluid{
+    background-color: black;
+   
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:white;
+}
+
+.area{
+    background-color: black;
+    color:white;
+}
+
+.areas{
+background-color: grey;
+}

@@ -21,6 +21,7 @@ import { PUserComponent } from './Pages/p-user/p-user.component';
 import { PerfilUComponent } from './Pages/perfil-u/perfil-u.component';
 import { ProyectosComponent } from './Pages/proyectos/proyectos.component';
 import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
+import { AreaComponent } from './Pages/area/area.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
     PUserComponent,
     PerfilUComponent,
     ProyectosComponent,
-    PagosUserComponent
+    PagosUserComponent,
+    AreaComponent
   ],
   imports: [
     BrowserModule,
