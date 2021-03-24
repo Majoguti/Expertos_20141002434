@@ -1,17 +1,42 @@
+.bg-ligh{
+   background: black;
+}
+
 .container-fluid{
+    background: black;
+}
+
+.navbar-expand-lg{
+    background: black;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.letra{
+    color: white;
+    
+}
+
+textarea{
     background-color: black;
-   
+    background: black;
+    color: white;
 }
+.large-textarea{
+  size: 300px;
+    height: 10em;
+    width: 500px;
+ }
 
-.navbar-light .navbar-nav .nav-link {
-    color:white;
-}
+ .centrar{
+     background: grey;
+     color: white;
+     size: 15px;
 
-.area{
-    background-color: black;
-    color:white;
-}
+ }
 
-.areas{
-background-color: grey;
-}
+ .row{
+     background: grey;
+ }

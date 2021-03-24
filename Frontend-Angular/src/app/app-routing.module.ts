@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'area', component:  AreaComponent},
   { path: 'menu_2', component:  PanelUComponent ,children: [{
     path: 'p-user', component: PUserComponent },
+    {path:'area', component:  AreaComponent },
     {path:'perfil-user', component:  PerfilUComponent },
     {path:'proyectos', component:  ProyectosComponent },
     {path:'pagos_user', component: PagosUserComponent },
