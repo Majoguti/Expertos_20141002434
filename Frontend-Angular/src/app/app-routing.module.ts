@@ -15,6 +15,8 @@ import { PerfilUComponent } from './Pages/perfil-u/perfil-u.component';
 import { ProyectosComponent } from './Pages/proyectos/proyectos.component';
 import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
 import { AreaComponent } from './Pages/area/area.component';
+import { CarpetasComponent } from './Pages/carpetas/carpetas.component';
+import { ArchivosComponent } from './Pages/archivos/archivos.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
     {path:'area', component:  AreaComponent },
     {path:'perfil-user', component:  PerfilUComponent },
     {path:'proyectos', component:  ProyectosComponent },
+    {path:'carpetas', component:  CarpetasComponent },
+    {path:'archivos', component:  ArchivosComponent },
     {path:'pagos_user', component: PagosUserComponent },
 
 

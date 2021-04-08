@@ -22,6 +22,8 @@ import { PerfilUComponent } from './Pages/perfil-u/perfil-u.component';
 import { ProyectosComponent } from './Pages/proyectos/proyectos.component';
 import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
 import { AreaComponent } from './Pages/area/area.component';
+import { CarpetasComponent } from './Pages/carpetas/carpetas.component';
+import { ArchivosComponent } from './Pages/archivos/archivos.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { AreaComponent } from './Pages/area/area.component';
     PerfilUComponent,
     ProyectosComponent,
     PagosUserComponent,
-    AreaComponent
+    AreaComponent,
+    CarpetasComponent,
+    ArchivosComponent
   ],
   imports: [
     BrowserModule,
