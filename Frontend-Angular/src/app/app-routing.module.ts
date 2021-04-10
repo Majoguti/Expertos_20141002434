@@ -17,32 +17,39 @@ import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
 import { AreaComponent } from './Pages/area/area.component';
 import { CarpetasComponent } from './Pages/carpetas/carpetas.component';
 import { ArchivosComponent } from './Pages/archivos/archivos.component';
+import { DetalleProyectoComponent } from './Pages/detalle-proyecto/detalle-proyecto.component';
 
 
 const routes: Routes = [
-  { path: '', component: LandingComponent},
-   
-  { path: 'inicio', component: InicioComponent},
-  { path: 'registro', component:  RegistroComponent},
-  { path: 'acerca', component:  AcercaComponent},
-  { path: 'area', component:  AreaComponent},
-  { path: 'menu_2', component:  PanelUComponent ,children: [{
-    path: 'p-user', component: PUserComponent },
-    {path:'area', component:  AreaComponent },
-    {path:'perfil-user', component:  PerfilUComponent },
-    {path:'proyectos', component:  ProyectosComponent },
-    {path:'carpetas', component:  CarpetasComponent },
-    {path:'archivos', component:  ArchivosComponent },
-    {path:'pagos_user', component: PagosUserComponent },
+  { path: '', component: LandingComponent },
+
+  { path: 'inicio', component: InicioComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'acerca', component: AcercaComponent },
+  { path: 'area', component: AreaComponent },
+  {
+    path: 'menu_2', component: PanelUComponent, children: [
+      { path: 'p-user', component: PUserComponent },
+      { path: 'detalle-carpeta/:idCarpeta', component: DetalleProyectoComponent },
+      { path: 'area', component: AreaComponent },
+      { path: 'perfil-user', component: PerfilUComponent },
+      { path: 'proyectos', component: ProyectosComponent },
+      { path: 'carpetas', component: CarpetasComponent },
+      { path: 'archivos', component: ArchivosComponent },
+      { path: 'pagos_user', component: PagosUserComponent },
 
 
-  ]},
-  { path: 'menu', component: PanelComponent , children: [{
-    path: 'p-admin', component: PAdminComponent},
-    {path: 'clientes', component: ClientesComponent},
-    {path: 'perfil', component: PerfilComponent},
-    {path: 'pagos', component: PagosComponent},
-  ] },
+    ]
+  },
+  {
+    path: 'menu', component: PanelComponent, children: [{
+      path: 'p-admin', component: PAdminComponent
+    },
+    { path: 'clientes', component: ClientesComponent },
+    { path: 'perfil', component: PerfilComponent },
+    { path: 'pagos', component: PagosComponent },
+    ]
+  },
 
 
 ];

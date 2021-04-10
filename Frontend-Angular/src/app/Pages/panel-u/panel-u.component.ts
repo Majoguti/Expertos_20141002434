@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelUComponent implements OnInit {
 
-  constructor() { }
+  idCliente: any = '';
+
+  constructor() {
+    this.idCliente = JSON.parse(localStorage.getItem('idcliente') || '')._id;
+  }
 
   ngOnInit(): void {
+    
+
   }
 
 }

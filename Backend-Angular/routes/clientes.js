@@ -45,7 +45,7 @@ router.get('/:id/proyectos', async (req, res) => {
 // http://localhost:3100/cliente/loginCliente
 router.post('/loginCliente', (req, res) => {
 
-    Clientes.findOne({ correo: req.body.correo, contrasenia: req.body.contrasenia }, { nombre: true, apellido: true, correo: true, plan_actual: true, proyectos: true })
+    Clientes.findOne({ correo: req.body.correo, contrasenia: req.body.contrasenia }, { _id: true })
         .then(datos => {
 
             if (datos) {
@@ -64,6 +64,21 @@ router.post('/loginCliente', (req, res) => {
 });
 
 // Actualizar fotoPerfil
+router.put('/actualizarFotoPerfil', (req, res) => {
+
+    Modelo.update({ _id: req.params.idcliente }, {
+        fotoPerfil: req.body.fotoPerfil
+    })
+        .then(datos => {
+            res.send(datos);
+            res.end();
+        })
+        .catch(error => {
+            res.send(error);
+            res.end();
+        });
+
+});
 
 
 //Guardar Proyecto

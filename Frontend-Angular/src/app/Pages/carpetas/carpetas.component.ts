@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-carpetas',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarpetasComponent implements OnInit {
 
-  constructor() { }
+  idCliente: any = '';
 
-  ngOnInit(): void {
+  constructor( private serviceCliente:ClientesService ) {
+    this.idCliente = JSON.parse(localStorage.getItem('idcliente') || '')._id;
   }
+
+  carpetas:any = [];
+
+  
+  ngOnInit(): void {
+    
+    this.obtenerCarpertas();
+
+  }
+
+  obtenerCarpertas(){
+    this.serviceCliente.obtenerCliente(this.idCliente).subscribe((data:any)=>{
+      console.log(data);
+      this.carpetas = data.carpetas;
+    });
+  }
+
 
 }

@@ -2,15 +2,15 @@
     <div style="color: blanchedalmond; height: 100vh;">
         <img id="logo" src="assets/img/prueboo.png" alt="" width="150px">
         <div id="contenido" class="mb-5">
-            <div id="formulario">
+            <form [formGroup]="login" id="formulario">
                 <h1>Iniciar Sesión</h1>
-                <input type="text" placeholder="Email" class="control caja-texto" />
-                <input type="password" placeholder="Password" class="control caja-texto" />
-                <input type="button" value="Iniciar Sesión" class="control boton" />
+                <input formControlName="correo" type="text" placeholder="Email" class="control caja-texto" />
+                <input formControlName="contrasenia" type="password" placeholder="Password" class="control caja-texto" />
+                <input (click)="inicio()" type="button" value="Iniciar Sesión" class="control boton" />
                 <input type="checkbox" id="Recordar" />Recordar siempre
                 <a href="https://es-la.facebook.com" id="facebook">
                     <img src="../../../assets/img/fb.jpg" alt="" width="15px">Iniciar sesión con facebook</a>
-            </div>
+            </form>
         </div>
     </div>
 </section>

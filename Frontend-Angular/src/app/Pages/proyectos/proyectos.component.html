@@ -16,18 +16,11 @@
 <div class="charts">
     <div class="charts__left">
         <div class="charts__left__title">
-            <div class="bloque">
-               <img src="../../../assets/img/icono_carpeta.png" width="55px">
-                <h4>Trabajo_1</h4>
-            </div>
-            <div class="bloque">
-                <img src="../../../assets/img/icono_carpeta.png" width="55px">
-                <h4>Trabajo_2</h4>
-            </div>
-
-            <div>
-                <img src="../../../assets/img/icono_carpeta.png" width="55px">
-                <h4>Trabajo_3</h4>
+            <div class="bloque" *ngFor="let item of proyectos">
+                <a [routerLink]="['/menu_2/detalle-carpeta/'+item._id]" routerLinkActive="router-link-active" href="">
+                    <img src="../../../assets/img/icono_carpeta.png" width="55px">
+                </a>
+                <h4>{{item.nombreProyecto}}</h4>
             </div>
 
         </div>

@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +26,7 @@ import { PagosUserComponent } from './Pages/pagos-user/pagos-user.component';
 import { AreaComponent } from './Pages/area/area.component';
 import { CarpetasComponent } from './Pages/carpetas/carpetas.component';
 import { ArchivosComponent } from './Pages/archivos/archivos.component';
+import { DetalleProyectoComponent } from './Pages/detalle-proyecto/detalle-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +51,15 @@ import { ArchivosComponent } from './Pages/archivos/archivos.component';
     PagosUserComponent,
     AreaComponent,
     CarpetasComponent,
-    ArchivosComponent
+    ArchivosComponent,
+    DetalleProyectoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
