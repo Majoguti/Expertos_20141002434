@@ -1,3 +1,35 @@
 .bloque{
     background-color: grey;
 }
+
+.card-body{
+    border-color: green;
+    background-color: rgba(212, 202, 202, 0.164);
+    height: 170px;
+    border-radius: 30px;
+}
+
+.color{
+    background-color: aquamarine;
+    size: 5px;
+    height: 150px;
+    
+}
+
+.color_2{
+    background-color: rgba(100, 148, 237, 0.219);
+    size: 5px;
+    height: 150px;
+}
+
+.color_3{
+    background-color: aquamarine;
+    size: 5px;
+    height: 150px;
+}
+
+.card-img-top{
+    border-radius: 10px;
+  
+ 
+}

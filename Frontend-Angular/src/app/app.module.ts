@@ -27,6 +27,8 @@ import { AreaComponent } from './Pages/area/area.component';
 import { CarpetasComponent } from './Pages/carpetas/carpetas.component';
 import { ArchivosComponent } from './Pages/archivos/archivos.component';
 import { DetalleProyectoComponent } from './Pages/detalle-proyecto/detalle-proyecto.component';
+import { LoginAComponent } from './Pages/login-a/login-a.component';
+import { PlanesComponent } from './Pages/planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { DetalleProyectoComponent } from './Pages/detalle-proyecto/detalle-proye
     AreaComponent,
     CarpetasComponent,
     ArchivosComponent,
-    DetalleProyectoComponent
+    DetalleProyectoComponent,
+    LoginAComponent,
+    PlanesComponent
   ],
   imports: [
     BrowserModule,

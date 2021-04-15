@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from 'src/app/services/clientes.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-carpetas',
@@ -15,6 +16,7 @@ export class CarpetasComponent implements OnInit {
   }
 
   carpetas:any = [];
+ 
 
   
   ngOnInit(): void {
@@ -29,6 +31,8 @@ export class CarpetasComponent implements OnInit {
       this.carpetas = data.carpetas;
     });
   }
+
+  
 
 
 }

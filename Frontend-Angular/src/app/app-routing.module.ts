@@ -18,6 +18,9 @@ import { AreaComponent } from './Pages/area/area.component';
 import { CarpetasComponent } from './Pages/carpetas/carpetas.component';
 import { ArchivosComponent } from './Pages/archivos/archivos.component';
 import { DetalleProyectoComponent } from './Pages/detalle-proyecto/detalle-proyecto.component';
+import { LoginAComponent } from './Pages/login-a/login-a.component';
+import { PlanesComponent } from './Pages/planes/planes.component';
+import { ClienteGuard } from './guardianes/cliente.guard';
 
 
 const routes: Routes = [
@@ -27,10 +30,12 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'acerca', component: AcercaComponent },
   { path: 'area', component: AreaComponent },
+  { path: 'login', component: LoginAComponent },
   {
-    path: 'menu_2', component: PanelUComponent, children: [
-      { path: 'p-user', component: PUserComponent },
-      { path: 'detalle-carpeta/:idCarpeta', component: DetalleProyectoComponent },
+    path: 'menu_2', component: PanelUComponent, canActivate:[ClienteGuard], children: [
+      { path: 'p-user', component: PUserComponent, canActivate:[ClienteGuard] },
+      { path: 'detalle-carpeta/:idCarpeta', component: DetalleProyectoComponent, canActivate:[ClienteGuard] },
+      { path: 'area/:idArchivo', component: AreaComponent },
       { path: 'area', component: AreaComponent },
       { path: 'perfil-user', component: PerfilUComponent },
       { path: 'proyectos', component: ProyectosComponent },
@@ -48,6 +53,7 @@ const routes: Routes = [
     { path: 'clientes', component: ClientesComponent },
     { path: 'perfil', component: PerfilComponent },
     { path: 'pagos', component: PagosComponent },
+    { path: 'planes', component: PlanesComponent },
     ]
   },
 

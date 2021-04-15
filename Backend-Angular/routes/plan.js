@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
 
     const id = req.params.id;
-    let Planes = await planes.find({ }, {nombre: true, apellido:true, cantidadProyectos:true, precio: true, descripcion: true });
+    let Planes = await planes.find({ }, {nombre: true, cantidadProyectos:true, precio: true, descripcion: true });
     res.send(Planes);
 
 });

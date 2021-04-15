@@ -1,15 +1,98 @@
-<h3>Archivos</h3>
+<main>
+    <div class="main__container">
+        <div class="main__title">
+            <img src="../../../assets/img/archivo_html.png" width="130px" alt="" />
+            <div class="main__greeting">
+                <h3>Mis Archivos</h3>
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModal_2">Crear
+                    Archivo</button>
+            </div>
+            <br>
 
-<div class="row">
+        </div>
+    </div>
+</main>
 
-    <div class="col-sm-6" *ngFor="let item of archivos" >
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ item.nombre }}</h5>
-                <p class="card-text">{{ item.descripcion }}.</p>
-                <button (click)="obtenerArchivo(item)" class="btn btn-sm btn-primary">Compartir</button>
+
+<section class="mt-5" >
+    <section>
+        <div class="row">
+            <div class="col-md-2 border p-1 text-center" *ngFor="let item of archivos">
+                <a [routerLink]="['/menu_2/detalle-carpeta/'+item._id]">
+                    <img *ngIf="item.extension === 'html'" width="50%"
+                        src="https://image.flaticon.com/icons/png/512/732/732212.png" class="img-fluid" alt="">
+                    
+                    <img *ngIf="item.extension === 'css'" width="50%"
+                        src="http://lineadecodigo.com/wp-content/uploads/2014/04/css.png" class="img-fluid" alt="">
+                    
+                    <img *ngIf="item.extension === 'js'" width="50%"
+                        src="https://e7.pngegg.com/pngimages/602/440/png-clipart-javascript-open-logo-number-js-angle-text.png" class="img-fluid" alt="">
+                </a>
+                <p class="text-muted text-center">{{item.nombre}}</p>
+                <p class="text-muted text-center">{{item.descripcion}}</p>
+                <hr>
+                <div class="ml-auto mr-auto text-center">
+                    <button (click)="obtenerArchivo(item)" class="btn-sm btn-success btn" data-toggle="modal"
+                        data-target="#exampleModal_1">compartir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- Modal Compartir Archivo -->
+<div class="modal fade" id="exampleModal_1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Compartir Archivo con:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input class="form-control my-2" type="text" [(ngModel)]="correo" placeholder="Correo">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" (click)="compartirArchivo()" data-dismiss="modal" class="btn btn-primary">Compartir</button>
             </div>
         </div>
     </div>
-   
+</div>
+
+
+<!-- Modal Crear Nuevo Archivo -->
+<div class="modal fade" id="exampleModal_2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Nuevo Archivo:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form class="col-12" style="width: 100%;" [formGroup]="formularioArchivo">
+                    <input formControlName="nombre" class="form-control my-2 " type="text" name="" id="nombre"
+                        placeholder="Nombre del Archivo">
+                    <input formControlName="descripcion" class="form-control my-2 " type="text" name="" id="descripcion"
+                        placeholder="Descripción">
+                    <label>Extensión del Archivo:</label>
+                    <select formControlName="extension" class="form-control my-2 " id="extension">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JS</option>
+                    </select>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" (click)="agregarArchivo()" class="btn btn-primary"
+                    data-dismiss="modal">Crear</button>
+            </div>
+        </div>
+    </div>
 </div>

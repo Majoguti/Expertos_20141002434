@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from 'src/app/services/clientes.service';
 
@@ -16,9 +17,19 @@ export class DetalleProyectoComponent implements OnInit {
 
   idProyecto: any = '';
   idCliente: any = '';
-  archivo:any={};
+  archivo: any = {};
+  correo: any = '';
+  archivoSeleccionado: any;
+  nombreProyecto: any;
 
-  archivos:any = [];
+  archivos: any[] = [];
+
+  formularioArchivo = new FormGroup({
+    nombre: new FormControl(),
+    descripcion: new FormControl(),
+    extension: new FormControl()
+
+  });
 
   ngOnInit(): void {
 
@@ -30,21 +41,45 @@ export class DetalleProyectoComponent implements OnInit {
   }
 
   obtenerArchivos() {
-    this.serviceCliente.obtenerArchivos(this.idCliente, this.idProyecto).subscribe((data: any) => {
-      console.log(data);
-      this.archivos = data;
+    this.serviceCliente.obtenerArchivos(this.idCliente, this.idProyecto).subscribe((data:any) => {
+      console.log(data)
+      if (data.length > 0) {
+        data.forEach((item: any) => {
+          if (item._id === this.idProyecto) {
+            this.archivos = item.archivos;
+            this.nombreProyecto = item.nombreProyecto;
+          }
+        });
+      }
     });
   }
 
-  obtenerArchivo(data: any) {
-    console.log(data);
-    this.archivo = data;
+  obtenerArchivo(archivo: any) {
+    this.archivoSeleccionado = archivo;
   }
 
-  compartirArchivo(){
-    //this.serviceCliente.campartir(this.correo, this.archivo).
+  compartirArchivo() {
+
+    console.log(this.correo);
+    console.log(this.archivoSeleccionado);
+
+    this.serviceCliente.compartirArchivo(this.correo, this.archivoSeleccionado).subscribe((data: any) => {
+      this.correo = '';
+      console.log(data)
+    });
   }
 
-  
+  agregarArchivo() {
+    console.log(this.formularioArchivo.value);
+
+    this.serviceCliente.agregarArchivos(this.idCliente, this.idProyecto, this.formularioArchivo.value).subscribe((data: any) => {
+      console.log(data);
+      this.obtenerArchivos();
+
+    })
+
+  }
+
+
 
 }

@@ -2,7 +2,6 @@ const { model, Schema } = require('mongoose');
 
 let planes = new Schema({
     nombre:  String ,
-    apellido: String ,
     cantidadProyectos: Number,
     precio: Number,
     descripcion: String

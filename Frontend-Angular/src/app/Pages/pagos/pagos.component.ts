@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-pagos',
@@ -7,19 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagosComponent implements OnInit {
 
-  usuarios = [
-    {  "nombre": "Maria", "apellido": "Sanchez", "plan": "Anual","Pago":"Vigente", "fecha": '03/02/2020' },
-  { "nombre": "Leonel", "apellido": "Martinez", "plan": "Mensual","Pago":"Vigente" ,"fecha": '05/01/2021' },
-  {  "nombre": "Pedro", "apellido": "Velasquez", "plan": "Mensual","Pago":"Vigente", "fecha": '08/07/2020'},
-  { "nombre": "Juan", "apellido": "Llorente", "plan": "Anual","Pago":"Vencido", "fecha": '10/05/2021'},
-  { "nombre": "Reina", "apellido": "Duarte", "plan": "Mensual","Pago":"Vigente", "fecha": '23/12/2021' },
-  { "nombre": "Fabiola", "apellido": "Lopez", "plan": "Anual","Pago":"Vencido", "fecha": '25/11/2021' }
-  
-]
-
-  constructor() { }
+  constructor(private serviceCliente : ClientesService) { }
+  clientes:any=[];
 
   ngOnInit(): void {
+    this.obtenerCliente();
+    
   }
+
+
+  obtenerCliente(){
+
+    this.serviceCliente.obtenerClientes().subscribe( ( res:any )=>{
+      console.log(res);
+      this.clientes = res;
+    });
+
+  }
+
 
 }

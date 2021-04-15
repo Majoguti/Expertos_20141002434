@@ -4,27 +4,73 @@
             <img src="../../../assets/img/proyectos.jpg" width="130px" alt="" />
             <div class="main__greeting">
                 <h3>Mis Proyectos</h3>
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModal_2">Crear
+                    Carpeta</button>
             </div>
             <br>
-
         </div>
     </div>
-
-
 </main>
 
-<div class="charts">
-    <div class="charts__left">
-        <div class="charts__left__title">
-            <div class="bloque" *ngFor="let item of proyectos">
-                <a [routerLink]="['/menu_2/detalle-carpeta/'+item._id]" routerLinkActive="router-link-active" href="">
-                    <img src="../../../assets/img/icono_carpeta.png" width="55px">
-                </a>
-                <h4>{{item.nombreProyecto}}</h4>
+<section>
+    <div class="row mt-5">
+        <div class="col-md-2 border p-1 text-center" *ngFor="let item of proyectos">
+            <a [routerLink]="['/menu_2/detalle-carpeta/'+item._id]">
+                <img width="50%" src="http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c4c5.png" class="img-fluid"
+                    alt="">
+            </a>
+            <p class="text-muted text-center">{{item.nombreProyecto}}</p>
+            <hr>
+            <div class="ml-auto mr-auto text-center">
+                <button (click)="obtenerCarpetaSeleccionada(item)" data-toggle="modal" data-target="#exampleModal_1"
+                    class="btn btn-sm btn-success btn-block">compartir</button>
             </div>
-
         </div>
-
     </div>
+</section>
 
+<!-- Modal Compartir -->
+<div class="modal fade" id="exampleModal_1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Compartir Carpeta con:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input class="form-control my-2" type="text" [(ngModel)]="correo" placeholder="Correo">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
+                <button type="button" (click)="compartirCarpeta()" class="btn btn-primary btn-sm">Compartir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Crear Nueva Carpeta -->
+<div class="modal fade" id="exampleModal_2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form [formGroup]="formularioCarpeta" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Nueva Carpeta:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input formControlName="nombreProyecto" class="form-control my-2" type="text" name="" id="nombre"
+                    placeholder="Nombre de Carpeta">
+                <input formControlName="descripcion" class="form-control my-2" type="text" name="" id="descripcion"
+                    placeholder="Descripción">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" (click)="agregarCarpeta()" data-dismiss="modal"
+                    class="btn btn-primary">Crear</button>
+            </div>
+        </form>
+    </div>
 </div>

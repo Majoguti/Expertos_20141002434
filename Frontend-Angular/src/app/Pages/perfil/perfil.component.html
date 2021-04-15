@@ -19,8 +19,10 @@
     <div class="charts__right">
       <div class="charts__right__title">
         <div>
-            <img id="logo" src="../../../assets/img/usuario.png" alt="" width="150px">
-            <a><input type="button" class="btn btn-success" value="Cambiar Mi foto " [routerLink]="['/registro']" routerLinkActive="router-link-active"></a>
+          <img id="logo" src="{{administrador.fotoPerfil }}" alt="" width="150px">
+          <input type="file" (change)="subirFoto($event)" class="d-none" #img>
+          <button type="button" class="btn btn-success" (click)=" img.click() " value="Cambiar Icono ">Cambiar
+            foto</button>
 
         </div>
       </div>

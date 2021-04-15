@@ -14,6 +14,27 @@ router.post('/', async (req, res) => {
 
 });
 
+//ActualizarPlan
+router.put('/:id/actualizarPlan', async (req, res) => {
+    Clientes.updateOne({ _id: req.params.id }, {
+        plan: {
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            cantidadProyectos: req.body.cantidadProyectos,
+            descripcion: req.body.descripcion
+        }
+    })
+        .then(datos => {
+            res.send(datos);
+            res.end();
+        })
+        .catch(error => {
+            res.send(error);
+            res.end();
+        });
+
+});
+
 
 //Obtener todos los clientes
 // http://localhost:3100/cliente/
@@ -64,9 +85,9 @@ router.post('/loginCliente', (req, res) => {
 });
 
 // Actualizar fotoPerfil
-router.put('/actualizarFotoPerfil', (req, res) => {
+router.put('/:id/actualizarFotoPerfil', (req, res) => {
 
-    Modelo.update({ _id: req.params.idcliente }, {
+    Clientes.updateOne({ _id: req.params.id }, {
         fotoPerfil: req.body.fotoPerfil
     })
         .then(datos => {
@@ -86,6 +107,8 @@ router.put('/:id/proyectos', async (req, res) => {
 
     const id = req.params.id;
     const { body } = req;
+
+
 
     const result = await Clientes.updateOne({
         _id: mongoose.Types.ObjectId(id)
@@ -107,7 +130,7 @@ router.put('/:id/proyectos', async (req, res) => {
     }
 });
 
-//Obtener Proyectos
+//Obtener Archivos
 // http://localhost:3100/cliente/id/proyectos/idP/archivos
 router.get('/:id/proyectos/:idProyectos/archivos', async (req, res) => {
 
@@ -120,7 +143,7 @@ router.get('/:id/proyectos/:idProyectos/archivos', async (req, res) => {
 
     let { proyectos } = data;
     let { archivos } = proyectos[0];
-    res.send(archivos);
+    res.send(proyectos);
 });
 
 // guardar archivos
@@ -141,6 +164,7 @@ router.put('/:id/proyectos/:idProyecto/archivos', async (req, res) => {
                     nombre: body.nombre,
                     descripcion: body.descripcion,
                     fecha_creacion: new Date(),
+                    extension: body.extension
                 }
             }
         });
@@ -178,7 +202,7 @@ router.put('/compartir-carpetas/:correo', async (req, res) => {
 
 
 //archivos compartidos
-//http://localhost:3100/cliente/<606d47a1a4be052ce8196d1a>/proyectos/<606d4816a4be052ce8196d1b>/archivos
+ //http://localhost:3100/cliente/compartir-archivos/majobob_1995@hotmail.com
 router.put('/compartir-archivos/:correo', async (req, res) => {
 
     const { correo } = req.params;
@@ -189,9 +213,10 @@ router.put('/compartir-archivos/:correo', async (req, res) => {
     }, {
         $push: {
             archivos: {
-                nombre: body.nombreProyecto,
+                nombre: body.nombre,
                 descripcion: body.descripcion,
                 fecha_creacion: body.fecha_creacion,
+                extension: body.extension
             }
         }
     });

@@ -18,10 +18,13 @@ app.get('/', function (req, res) {
 
 var rutacliente= require('./routes/clientes');
 var rutaplan= require('./routes/plan');
+var rutaadministrador= require('./routes/administrador');
+
 
 // Usar rutas
 app.use('/cliente', rutacliente);
 app.use('/planes', rutaplan);
+app.use('/administrador', rutaadministrador);
 
 
 
