@@ -11,14 +11,12 @@ export class PerfilUComponent implements OnInit {
 
   urlFoto: any = '../../../assets/img/perfil.png';
   idCliente: any = '';
+  nombre: any;
+  apellido: any;
+  correo: any;
 
   cliente = {
-    //"plan": '',
     fotoPerfil: '',
-    //"proyectos": []
-    //"carpetas": []
-    //"archivos":[]
-    //"_id": "60711c18589ded32d83e6ac5",
     nombre: '',
     apellido: '',
     correo: '',
@@ -26,15 +24,15 @@ export class PerfilUComponent implements OnInit {
 
   constructor(private serviceCliente: ClientesService) {
 
-    //this.idCliente = JSON.parse(localStorage.getItem('cliente') || '60711c18589ded32d83e6ac5');
-    this.idCliente = '60774607e8287d53588c9b9b';
-
-
+  
+    this.idCliente = JSON.parse(localStorage.getItem('idcliente') || '')._id;
+    
   }
 
   ngOnInit(): void {
 
     this.obtenerCliente();
+    this.obtenerInformacionCliente();
 
   }
 
@@ -48,7 +46,6 @@ export class PerfilUComponent implements OnInit {
 
     this.serviceCliente.subirFoto(formData).subscribe((data: any) => {
       this.urlFoto = data.url;
-      console.log(data);
 
       if (this.urlFoto) {
         this.actualizarFoto();
@@ -76,6 +73,16 @@ export class PerfilUComponent implements OnInit {
       }
 
     });
+  }
+
+  obtenerInformacionCliente() {
+
+    this.serviceCliente.obtenerCliente(this.idCliente).subscribe((res: any) => {
+      this.nombre = res.nombre;
+      this.apellido = res.apellido;
+      this.correo = res.correo;
+    
+    })
   }
 
 }

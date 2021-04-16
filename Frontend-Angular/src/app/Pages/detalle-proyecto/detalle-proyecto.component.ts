@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from 'src/app/services/clientes.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-detalle-proyecto',
@@ -66,6 +67,12 @@ export class DetalleProyectoComponent implements OnInit {
     this.serviceCliente.compartirArchivo(this.correo, this.archivoSeleccionado).subscribe((data: any) => {
       this.correo = '';
       console.log(data)
+      Swal.fire(
+        '¡Se ha Compartido tu archivo con èxito!',
+        'Para salir dar click',
+        'success'
+      )
+
     });
   }
 
@@ -73,8 +80,14 @@ export class DetalleProyectoComponent implements OnInit {
     console.log(this.formularioArchivo.value);
 
     this.serviceCliente.agregarArchivos(this.idCliente, this.idProyecto, this.formularioArchivo.value).subscribe((data: any) => {
+    
       console.log(data);
       this.obtenerArchivos();
+      Swal.fire(
+        '¡Se ha creado tu archivo con èxito!',
+        'Para salir dar click',
+        'success'
+      )
 
     })
 

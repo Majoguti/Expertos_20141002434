@@ -6,27 +6,44 @@
                 <h3>Pagos</h3>
             </div>
             <br>
-
         </div>
     </div>
 
 
 </main>
 
-<div class="charts">
-    <div class="charts__left">
-        <div class="charts__left__title">
-            <div class="bloque">
-                Plan Actual <input type="text">
-            </div>
-        </div>
-    </div>
-        <div class="charts__left">
-            <div class="charts__left__title">
-                <div class="bloque">
-                    Fecha de Vencimiento de su Plan <input type="datetime">
-                </div>
+<main>
 
+    <div class="charts__right">
+        <div class="charts__right__title">
+            <div>
+                <h1>Descripción de tu plan actual</h1>
+                <br>
+                <label class="color">Plan Actual: <span class="color_1">{{nombre}}</span> </label>
+                <br>
+                <label class="color">Precio: <span class="color_1">{{precio}}$</span> </label>
+                <br>
+                <label class="color">Descripción: <span class="color_1">{{descripcion}}</span> </label>
+                <br>
+                <label class="color">Capacidad de Proyectos: <span class="color_1">{{cantidadProyectos}}</span></label>
+                <br>
+                <label class="color">Cambiar Plan Actual:</label>
+                <select class="form-control my-2 " id="extension">
+                    <option>Gratis</option>
+                    <option>Mensual</option>
+                    <option>Anual</option>
+                </select>
             </div>
         </div>
     </div>
+</main>
+
+<div class="charts__left">
+    <div class="charts__left__title">
+        <div>
+            <h1>Pagos</h1>
+            <br>
+            <button type="button" (click)="Pagos()" class="btn btn-success">Pagar Ahora</button>
+        </div>
+    </div>
+</div>

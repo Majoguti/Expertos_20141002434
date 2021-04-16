@@ -13,26 +13,26 @@
 
 </main>
 
-<div class="charts">
-    <div class="charts__left">
-        <div class="charts__left__title">
-            <div class="bloque" *ngFor="let item of carpetas" >
-                <img src="../../../assets/img/folder.png" width="55px">
+<section>
+    <div class="row mt-5">
+        <div class="col-md-2 border p-1 text-center" *ngFor="let item of carpetas">
+            <a [routerLink]="['/menu_2/detalle-carpeta/'+item._id]">
+                <img width="50%" src="http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c4c5.png" class="img-fluid"
+                    alt="">
+            </a>
+            <p class="text-muted text-center">{{item.nombreProyecto}}</p>
+            <hr>
+            <div class="ml-auto mr-auto text-center">
+                
             </div>
-          
-
         </div>
-
     </div>
+</section>
 
-</div>
 
-
-<div class="row" *ngIf="carpetas.length == 0" >
+<div class="row" *ngIf="carpetas.length == 0">
     <div class="col-12 text-center">
         <img src="../../../assets/img/archivos.png" width="100px" id="img-archivo" class="img-fluid" alt="">
         <h3>No tiene Carpetas Compartidas</h3>
     </div>
 </div>
-
-

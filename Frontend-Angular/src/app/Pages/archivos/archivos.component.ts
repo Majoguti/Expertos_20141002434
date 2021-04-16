@@ -9,6 +9,7 @@ import { ClientesService } from 'src/app/services/clientes.service';
 export class ArchivosComponent implements OnInit {
 
   idCliente: any = '';
+  nombre: any;
 
   constructor(private serviceCliente: ClientesService) {
     this.idCliente = JSON.parse(localStorage.getItem('idcliente') || '')._id;
@@ -19,13 +20,16 @@ export class ArchivosComponent implements OnInit {
   ngOnInit(): void {
 
     this.obtenerArchivos();
+   
   }
 
   obtenerArchivos() {
     this.serviceCliente.obtenerCliente(this.idCliente).subscribe((data: any) => {
       console.log(data);
-      this.archivos = data.carpetas;
+      this.archivos = data.archivos;
     });
   }
+
+ 
 
 }

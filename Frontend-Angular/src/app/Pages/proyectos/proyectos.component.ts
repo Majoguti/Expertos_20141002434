@@ -55,8 +55,8 @@ export class ProyectosComponent implements OnInit {
         this.obtenerProyectos();
         console.log(res);
         Swal.fire(
-          'Good job!',
-          'You clicked the button!',
+          'Carpeta Craeada con Èxito!',
+          'Para salir dar click!',
           'success'
         )
       }
@@ -68,8 +68,13 @@ export class ProyectosComponent implements OnInit {
     console.log(this.carpetaSeleccionada);
 
     this.serviceCliente.compartirCarpeta(this.correo, this.carpetaSeleccionada).subscribe((data: any) => {
-
+      this.correo = '';
       console.log(data)
+      Swal.fire(
+        'Se ha Compartido tu carpeta con èxito!',
+        'Para salir dar click',
+        'success'
+      )
     });
   }
 

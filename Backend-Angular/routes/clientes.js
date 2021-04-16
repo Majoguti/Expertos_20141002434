@@ -15,6 +15,8 @@ router.post('/', async (req, res) => {
 });
 
 //ActualizarPlan
+
+//http://localhost:3100/cliente/607745d9e8287d53588c9b9a/actualizarPlan
 router.put('/:id/actualizarPlan', async (req, res) => {
     Clientes.updateOne({ _id: req.params.id }, {
         plan: {

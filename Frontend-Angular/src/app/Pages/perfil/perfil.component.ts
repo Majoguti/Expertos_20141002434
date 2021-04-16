@@ -11,6 +11,9 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 export class PerfilComponent implements OnInit {
   urlFoto: any = '../../../assets/img/perfil.png';
   idAdministrador: any = '';
+  nombre: any;
+  apellido: any;
+  correo: any;
 
   administrador = {
     fotoPerfil: '',
@@ -26,6 +29,7 @@ export class PerfilComponent implements OnInit {
   ngOnInit(): void {
 
     this.obtenerAdministrador();
+    this.obtenerInformacionAdministrador();
   }
 
   subirFoto(event: any) {
@@ -66,6 +70,16 @@ export class PerfilComponent implements OnInit {
       }
 
     });
+  }
+
+  obtenerInformacionAdministrador() {
+
+    this.serviceAdministrador.obtenerAdministrador(this.idAdministrador).subscribe((res: any) => {
+      this.nombre = res.nombre;
+      this.apellido = res.apellido;
+      this.correo = res.correo;
+    
+    })
   }
 
 

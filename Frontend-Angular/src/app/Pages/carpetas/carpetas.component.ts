@@ -32,6 +32,14 @@ export class CarpetasComponent implements OnInit {
     });
   }
 
+  obtenerCarpetas() {
+    this.serviceCliente.obtenerCliente(this.idCliente).subscribe((data: any) => {
+      console.log(data);
+      this.carpetas = data.carpetas;
+     
+    });
+  }
+
   
 
 

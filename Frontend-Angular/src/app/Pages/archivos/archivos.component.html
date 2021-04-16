@@ -11,24 +11,33 @@
 
 </main>
 
-<div class="charts">
-    <div class="charts__left">
-        <div class="charts__left__title">
-            <div class="bloque" *ngFor="let item of archivos"  >
-                <img src="../../../assets/img/folder.png" width="55px">
+<section class="mt-5">
+    <section>
+        <div class="row">
+            <div class="col-md-2 border p-1 text-center" *ngFor="let item of archivos">
+                <a [routerLink]="['/menu_2/detalle-carpeta/'+item._id]">
+                    <img *ngIf="item.extension === 'html'" width="50%"
+                        src="https://image.flaticon.com/icons/png/512/732/732212.png" class="img-fluid" alt="">
+
+                    <img *ngIf="item.extension === 'css'" width="50%"
+                        src="http://lineadecodigo.com/wp-content/uploads/2014/04/css.png" class="img-fluid" alt="">
+
+                    <img *ngIf="item.extension === 'js'" width="50%"
+                        src="https://e7.pngegg.com/pngimages/602/440/png-clipart-javascript-open-logo-number-js-angle-text.png"
+                        class="img-fluid" alt="">
+                </a>
+                <p class="text-muted text-center">{{item.nombre}}</p>
+                <p class="text-muted text-center">{{item.descripcion}}</p>
+                <hr>
+
             </div>
-          
-
         </div>
+    </section>
+</section>
 
-    </div>
-
-</div>
-
-<div class="row" *ngIf="archivos.length == 0" >
+<div class="row" *ngIf="archivos.length == 0">
     <div class="col-12 text-center">
         <img src="../../../assets/img/no_hay.png" width="100px" id="img-archivo" class="img-fluid" alt="">
         <h3>No tiene Archivos Compartidos</h3>
     </div>
 </div>
-
