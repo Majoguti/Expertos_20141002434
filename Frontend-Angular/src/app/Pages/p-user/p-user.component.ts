@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from 'src/app/services/clientes.service';
 import { PlanesService } from 'src/app/services/planes.service';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -9,25 +11,50 @@ import { PlanesService } from 'src/app/services/planes.service';
 })
 export class PUserComponent implements OnInit {
 
-  constructor(private ClientesService: PlanesService) { }
+  constructor(private PlanesService: PlanesService, private serviceCliente: ClientesService) { }
 
-  planes: any;
+  planes: any = [];
+  idCliente: any = '';
 
- 
   ngOnInit(): void {
+
+    this.obtenerPlanes();
+
+    this.idCliente = JSON.parse(localStorage.getItem('idcliente') || '')._id;
+
   }
 
-  obtenerPlanes(data: any) {
-    this.ClientesService.obtenerPlanes(data).subscribe((data: any) => {
-      this.planes = data.planes;
-      console.log(this.planes);
+  obtenerPlanes() {
+    this.PlanesService.obtenerPlanes().subscribe((data: any) => {
+      this.planes = data;
+      console.log(data);
     });
   }
 
 
-  planSeleccionado(plan:any){
-    console.log(plan)
+  planSeleccionado(planes: any) {
+    console.log(planes);
   }
 
 
+  obtenerPlan(planes: any) {
+    this.planSeleccionado = planes;
+  }
+
+  actualizarPlan(plan: any) {
+
+    this.serviceCliente.actualizarPlan(this.idCliente, plan).subscribe((data:any)=>{
+      console.log(data)
+      if (data) {
+        Swal.fire(
+          'Haz adquirido un Plan!',
+          'Para salir dar click',
+          'success'
+        )
+      }
+    });
+
+  }
+
+   
 }

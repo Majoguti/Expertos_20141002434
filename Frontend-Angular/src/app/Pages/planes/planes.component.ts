@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlanesService } from 'src/app/services/planes.service';
 
 @Component({
   selector: 'app-planes',
@@ -7,35 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private PlanesService: PlanesService) { }
 
-  planes: any[] = [
-    {
-      _id: "6076698a80614c50e8cc65e5",
-      cantidadProyectos: 10,
-      precio: 8,
-      descripcion: "5 MB por archivo"
-    },
-    {
-      _id: "6077724fcdab7450f4995893",
-      cantidadProyectos: 1,
-      precio: 0,
-      descripcion: "2 MB por archivo"
-    },
-    {
-      _id: "6077727bcdab7450f4995894",
-      cantidadProyectos: 25,
-      precio: 12,
-      descripcion: "25 MB por archivo"
-    }
-  ];
+  planes:any=[];
 
   ngOnInit(): void {
+
+    this.obtenerPlanes();
   }
 
-  planSeleccionado(plan:any){
-    console.log(plan)
+  obtenerPlanes() {
+    this.PlanesService.obtenerPlanes().subscribe((data: any) => {
+      this.planes = data;
+      console.log(data);
+    });
   }
 
+
+  planSeleccionado(planes:any){
+    console.log(planes);
+  }
 
 }
+
+
+

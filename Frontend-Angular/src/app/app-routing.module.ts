@@ -32,9 +32,9 @@ const routes: Routes = [
   { path: 'area', component: AreaComponent },
   { path: 'login', component: LoginAComponent },
   {
-    path: 'menu_2', component: PanelUComponent, canActivate:[ClienteGuard], children: [
-      { path: 'p-user', component: PUserComponent, canActivate:[ClienteGuard] },
-      { path: 'detalle-carpeta/:idCarpeta', component: DetalleProyectoComponent, canActivate:[ClienteGuard] },
+    path: 'menu_2', component: PanelUComponent, canActivate: [ClienteGuard], children: [
+      { path: 'p-user', component: PUserComponent, canActivate: [ClienteGuard] },
+      { path: 'detalle-carpeta/:idCarpeta', component: DetalleProyectoComponent, canActivate: [ClienteGuard] },
       { path: 'area/:idArchivo', component: AreaComponent },
       { path: 'area', component: AreaComponent },
       { path: 'perfil-user', component: PerfilUComponent },
@@ -42,6 +42,8 @@ const routes: Routes = [
       { path: 'carpetas', component: CarpetasComponent },
       { path: 'archivos', component: ArchivosComponent },
       { path: 'pagos_user', component: PagosUserComponent },
+
+
 
 
     ]
@@ -61,7 +63,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

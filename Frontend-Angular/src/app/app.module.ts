@@ -30,6 +30,13 @@ import { DetalleProyectoComponent } from './Pages/detalle-proyecto/detalle-proye
 import { LoginAComponent } from './Pages/login-a/login-a.component';
 import { PlanesComponent } from './Pages/planes/planes.component';
 
+// firebase
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +70,10 @@ import { PlanesComponent } from './Pages/planes/planes.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@ export class AdministradorService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = 'http://localhost:3100/administrador';
+  url: string = 'https://codenowbe.herokuapp.com/administrador';
 
 
   obtenerAdministradores() {

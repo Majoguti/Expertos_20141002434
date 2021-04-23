@@ -26,10 +26,19 @@
     background-color: aquamarine;
     size: 5px;
     height: 150px;
+
 }
 
 .card-img-top{
     border-radius: 10px;
   
  
+
+}
+
+
+.imagen{
+    width: 190px;
+    text-align: center;
+
 }

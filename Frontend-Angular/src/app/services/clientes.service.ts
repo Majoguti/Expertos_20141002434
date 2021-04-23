@@ -10,7 +10,7 @@ export class ClientesService {
 
   }
 
-  url: string = 'http://localhost:3100/cliente';
+  url: string = 'https://codenowbe.herokuapp.com/cliente';
 
   obtenerClientes() {
     return this.http.get(this.url);
@@ -52,20 +52,38 @@ export class ClientesService {
 
   //http://localhost:3100/cliente/6071164f589ded32d83e6ac4/proyectos
 
-  agregarCarpeta(idCliente:any, data:any ){
-    return this.http.put(this.url+ '/'+ idCliente+ '/proyectos/',data)
+  agregarCarpeta(idCliente: any, data: any) {
+    return this.http.put(this.url + '/' + idCliente + '/proyectos/', data)
   }
 
   //http://localhost:3100/cliente/compartir-carpetas/majobob_1995@hotmail.com
 
-  compartirCarpeta(correo:any, data:any){
-    return this.http.put(this.url+ '/compartir-carpetas/'+ correo, data)
+  compartirCarpeta(correo: any, data: any) {
+    return this.http.put(this.url + '/compartir-carpetas/' + correo, data)
 
   }
   //http://localhost:3100/cliente/compartir-archivos/majobob_1995@hotmail.com
-  compartirArchivo(correo:any, data:any){
-    return this.http.put(this.url+ '/compartir-archivos/'+ correo, data)
+  compartirArchivo(correo: any, data: any) {
+    return this.http.put(this.url + '/compartir-archivos/' + correo, data)
 
   }
 
+  //http://localhost:3100/cliente/607745d9e8287d53588c9b9a/actualizarPlan
+
+  actualizarPlan(idCliente: any, data: any) {
+    return this.http.put(this.url + '/' + idCliente + '/actualizarPlan/', data);
+  }
+
+
+  //http://localhost:3100/cliente
+
+  loginGoogle(cliente: any) {
+    return this.http.post(this.url + '/google/', cliente);
+  }
+
+  //http://localhost:3100/cliente
+
+  añadircliente(cliente: any) {
+    return this.http.post(this.url, cliente);
+  }
 }

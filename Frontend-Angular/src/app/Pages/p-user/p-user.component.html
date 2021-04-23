@@ -20,8 +20,8 @@
 
     <div class="col-md-4" *ngFor="let item of planes">
         <div class="card h-100 color">
-            <img src="../../../assets/img/gratuito.png" class="card-img-top" alt="...">
-            <button (click)="planSeleccionado(item)" type="button" class="btn btn-success small mt-2 mb-2">Adquirir Plan</button>
+            <img src="../../../assets/img/logoo.png"  class="card-img-top imagen text-center ml-auto mr-auto img-fluid m-2" alt="...">
+            <button (click)="actualizarPlan(item)"  class="btn btn-sm btn-success btn-block">Obtener Plan</button>
             <div class="card-body">
                 <p class="card-text">Nombre: {{ item.nombre }}</p>
                 <p class="card-text">Cantidad de Proyectos: {{ item.cantidadProyectos }}</p>

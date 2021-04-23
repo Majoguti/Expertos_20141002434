@@ -4,11 +4,11 @@
         <div id="contenido" class="mb-5" >
             <div id="formulario" >
                 <h1>Registrate</h1>
-                <input type="text" placeholder="Nombre" class="control caja-texto" />
-                <input type="text" placeholder="Apellido" class="control caja-texto" />
-                <input type="text" placeholder="Correo" class="control caja-texto" />
-                <input type="password" placeholder="Password" class="control caja-texto" />
-                <input type="button" value="Registrarme" class="control boton" />
+                <input type="text" placeholder="Nombre" class="control caja-texto" [(ngModel)]="cliente.nombre" />
+                <input type="text" placeholder="Apellido" class="control caja-texto" [(ngModel)]="cliente.apellido"/>
+                <input type="text" placeholder="Correo" class="control caja-texto" [(ngModel)]="cliente.correo"/>
+                <input type="password" placeholder="Password" class="control caja-texto" [(ngModel)]="cliente.contrasenia" />
+                <input type="button" value="Registrarme" class="control boton" (click)="crearCliente()" />
             
             </div>
         </div>

@@ -4,6 +4,21 @@ const router = express.Router();
 const Clientes = require('../modelos/cliente');
 
 
+router.post('/google', async (req, res) => {
+    const { body } = req;
+
+    const cliente = await Clientes.findOne({ correo: body.correo });
+
+    if (cliente) {
+        res.send(cliente);
+    } else {
+        let newcliente = Clientes(body);
+        await newcliente.save();
+        res.send(newcliente);
+
+    }
+});
+
 // Crear nuevo cliente
 // http://localhost:3100/cliente
 router.post('/', async (req, res) => {
@@ -204,7 +219,7 @@ router.put('/compartir-carpetas/:correo', async (req, res) => {
 
 
 //archivos compartidos
- //http://localhost:3100/cliente/compartir-archivos/majobob_1995@hotmail.com
+//http://localhost:3100/cliente/compartir-archivos/majobob_1995@hotmail.com
 router.put('/compartir-archivos/:correo', async (req, res) => {
 
     const { correo } = req.params;

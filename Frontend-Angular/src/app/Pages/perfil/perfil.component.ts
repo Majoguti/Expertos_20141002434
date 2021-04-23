@@ -23,7 +23,7 @@ export class PerfilComponent implements OnInit {
   }
   constructor(private serviceAdministrador: AdministradorService) { 
     //this.idCliente = JSON.parse(localStorage.getItem('cliente') || '60711c18589ded32d83e6ac5');
-    this.idAdministrador = '6076246a9bebae352016fe78';
+    this.idAdministrador = JSON.parse(localStorage.getItem('administrador') || '60711c18589ded32d83e6ac5');;
   }
 
   ngOnInit(): void {

@@ -10,11 +10,14 @@ export class PlanesService {
 
   }
 
-  url: string = 'http://localhost:3100/cliente';
+  url: string = 'https://codenowbe.herokuapp.com/planes';
+
 
   //http://localhost:3100/planes
 
-  obtenerPlanes(data: any) {
-    return this.http.get(this.url + '/planes/',data);
+  obtenerPlanes() {
+    return this.http.get(this.url);
   }
+
+
 }
