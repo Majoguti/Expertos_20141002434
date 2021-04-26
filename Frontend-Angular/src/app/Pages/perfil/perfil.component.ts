@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { AdministradorService } from 'src/app/services/administrador.service';
 
 
@@ -22,8 +21,8 @@ export class PerfilComponent implements OnInit {
     correo: '',
   }
   constructor(private serviceAdministrador: AdministradorService) { 
-    //this.idCliente = JSON.parse(localStorage.getItem('cliente') || '60711c18589ded32d83e6ac5');
-    this.idAdministrador = JSON.parse(localStorage.getItem('administrador') || '60711c18589ded32d83e6ac5');;
+
+    this.idAdministrador = JSON.parse(localStorage.getItem('idadministrador') || '')._id;
   }
 
   ngOnInit(): void {
@@ -51,10 +50,9 @@ export class PerfilComponent implements OnInit {
     });
 
   }
-
+//  obtiene toda la informacion del administrador logeado
   obtenerAdministrador() {
-    // este metodo obtiene toda la informacion del administrador logeado
-
+    
     this.serviceAdministrador.obtenerAdministrador(this.idAdministrador).subscribe((res: any) => {
       console.log(res);
       this.administrador = res;
